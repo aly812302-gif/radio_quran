@@ -27,15 +27,16 @@ class Station {
 }
 
 final stations = [
+  Station('إذاعة القرآن الكريم - السعودية',
+      'https://qurango.net/radio/tarateel', Icons.mosque),
+  Station('تلاوات خاشعة - مشاري العفاسي',
+      'https://qurango.net/radio/mishary_alafasy', Icons.headphones),
+  Station('القرآن الكريم - عبد الباسط عبد الصمد',
+      'https://qurango.net/radio/abdulbasit_abdulsamad_mojawwadr', Icons.menu_book),
+  Station('القرآن الكريم - ماهر المعيقلي',
+      'https://qurango.net/radio/maher_almuaiqly', Icons.radio),
   Station('إذاعة القرآن الكريم - الأردن',
-      'https://jrtv-live.ercdn.net/jrradio/quranradio.m3u8', Icons.menu_book),
-  Station('Mp3Quran - السعودية',
-      'https://qurango.net/radio/mix', Icons.mosque),
-  Station('قناة العربية الإخبارية',
-      'https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8',
-      Icons.newspaper),
-  Station('تلاوات قرآنية متنوعة',
-      'http://live.mp3quran.net:9834/', Icons.headphones),
+      'https://jrtv-live.ercdn.net/jrradio/quranradio.m3u8', Icons.newspaper),
 ];
 
 class HomePage extends StatefulWidget {
@@ -66,7 +67,7 @@ class _HomePageState extends State<HomePage> {
       setState(() => _loading = false);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('تعذر التشغيل: $e')),
+          SnackBar(content: Text('تعذر التشغيل، جرب إذاعة أخرى.')),
         );
       }
     }
